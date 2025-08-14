@@ -190,10 +190,10 @@ public class SignupDialog  extends JDialog implements ActionListener
 	}
 	public void emailSend(String otp,String email,String name)
 	{
-		String from = "tellyking15@gmail.com";
+		String from = DataBase.EMAIL;
         String host = "smtp.gmail.com";
         final String username = "tellyking15@gmail.com";
-        final String password = "mnwbweyfpbojwhdt";
+        final String password = DataBase.EPASS;
         Properties properties = new Properties();
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", "465");
