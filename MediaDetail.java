@@ -250,7 +250,7 @@ public class MediaDetail extends JFrame implements Runnable
 						try
 						{
 							   ChromeOptions co= new ChromeOptions();
-//							   co.addArguments("--headless=new");
+							   co.addArguments("--headless=new");
 						       co.setCapability("goog:loggingPrefs", Map.of(LogType.PERFORMANCE,java.util.logging.Level.ALL));
 						       
 						       co.addArguments("window-size=1920,1080");
