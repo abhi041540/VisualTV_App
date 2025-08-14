@@ -250,7 +250,7 @@ public class MediaDetail extends JFrame implements Runnable
 						try
 						{
 							   ChromeOptions co= new ChromeOptions();
-							   co.addArguments("--headless=new");
+//							   co.addArguments("--headless=new");
 						       co.setCapability("goog:loggingPrefs", Map.of(LogType.PERFORMANCE,java.util.logging.Level.ALL));
 						       
 						       co.addArguments("window-size=1920,1080");
@@ -349,14 +349,20 @@ public class MediaDetail extends JFrame implements Runnable
 											  {
 												  try
 												  {
-												  trailer=wd.findElement(By.cssSelector("video"));  
-												  
+													trailer=wd.findElement(By.cssSelector("div div video")); 
 												  }
 												  catch(Exception e5)
 												  {
-													  trailer=null;
-													  System.out.println("no video component");
-													  e5.printStackTrace();
+													  try {
+														  trailer=wd.findElement(By.cssSelector("video")); 
+													  }
+													  catch (Exception e6)
+													  {
+														  trailer=null;
+														  System.out.println("no video component");
+														  e5.printStackTrace();
+													  }
+													  
 												  }
 											  }
 										  }
